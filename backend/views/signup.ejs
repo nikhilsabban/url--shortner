@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #1f1c2c, #928dab);
+        color: #f0f0f0;
+      }
+
+      form {
+        background-color: #2a2a2a;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+        width: 100%;
+        max-width: 400px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #ffffff;
+        margin-bottom: 24px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+        color: #ccc;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 12px;
+        border: 1px solid #555;
+        border-radius: 8px;
+        background-color: #3b3b3b;
+        color: #fff;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+
+      input[type="text"]::placeholder,
+      input[type="password"]::placeholder {
+        color: #aaa; /* Faint color for placeholder */
+        font-style: italic;
+      }
+
+      .password-wrapper {
+        position: relative;
+      }
+
+      .toggle-password {
+        position: absolute;
+        top: 40%;
+        right: 10px;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        color: #ccc;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 0;
+        line-height: 1;
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        background-color: #4a90e2;
+        color: white;
+        border: none;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #357abd;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+  </head>
+  <body>
+    <form action="/user" method="post">
+      <h1>Signup</h1>
+
+      <label>Full Name</label>
+      <input type="text" required name="name" placeholder="John Doe" />
+
+      <label>Email</label>
+      <input type="text" required name="email" placeholder="example@mail.com" />
+
+      <label>Password</label>
+      <div class="password-wrapper">
+        <input type="password" required name="password" id="passwordInput" placeholder="Your password" />
+        <button type="button" class="toggle-password" onclick="togglePassword()">👁️</button>
+      </div>
+
+      <button type="submit">Signup</button>
+    </form>
+
+    <script>
+      function togglePassword() {
+        const passwordInput = document.getElementById("passwordInput");
+        const toggleButton = document.querySelector(".toggle-password");
+
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          toggleButton.textContent = "🙈"; // Hide icon
+        } else {
+          passwordInput.type = "password";
+          toggleButton.textContent = "👁️"; // Show icon
+        }
+      }
+    </script>
+  </body>
+</html>
