@@ -12,7 +12,7 @@ const userRoute = require("./routes/user");
 const app = express();
 const PORT = 8001;
 
-connectToMongoDB(process.env.MONGODB ?? "mongodb+srv://nikhilsabban:W380PyUVpghxzftg@cluster0.izd8vlo.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(() =>
+connectToMongoDB(process.env.MONGODB ?? "mongodb+srv://nikhilsabban:W380PyUVpghxzftg@cluster0.izd8vlo.mongodb.net/urlshort?retryWrites=true&w=majority&appName=Cluster0").then(() =>
   console.log("Mongodb connected")
 );
 
